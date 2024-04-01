@@ -1,0 +1,538 @@
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
+}
+.pinningHeader{
+    position: sticky;
+    top: 0;
+    height: auto;
+    min-height: 70px;
+    z-index: 1;
+}
+.pinningHeaderContainer{
+    left: 0;
+    position: relative;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    background: rgb(20, 20, 20);
+}.mainHeader{
+    background-color: rgb(20, 20, 20);
+    align-items: center;
+    display: flex;
+    font-size: 1.2rem;
+    padding: 0 4%;
+    position: relative;
+    transition: background-color .4s;
+    z-index: 2;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, .7) 10%, transparent);
+}
+.pinningHeader .mainHeader .logo {
+    color: #e50914;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.8em;
+    margin-right: 5px;
+    text-decoration: none;
+    vertical-align: middle;
+}.icon-logoUpdate:before {
+    content: "\e5d0";
+}
+.pinningHeader .tabbed-primary-navigation {
+    align-items: center;
+    display: flex !important;
+    margin: 0;
+    padding: 0;
+    
+}.pinningHeader .tabbed-primary-navigation .navigation-menu, .pinningHeader .tabbed-primary-navigation .navigation-tab {
+    list-style-type: none;
+    margin-left: 18px;
+}
+.pinningHeader .tabbed-primary-navigation .navigation-menu .menu-trigger {
+    align-items: center;
+    display: flex;
+    font-weight: 500;
+    height: 100%;
+}
+.pinningHeader .tabbed-primary-navigation .navigation-tab {
+    display: none;
+}
+.pinningHeader .tabbed-primary-navigation .navigation-menu, .pinningHeader .tabbed-primary-navigation .navigation-tab {
+    list-style-type: none;
+    margin-left: 18px;
+}
+.pinningHeader .tabbed-primary-navigation .navigation-tab a.current {
+    color: #fff;
+    cursor: default;
+    font-weight: 500;
+}
+.pinningHeader .tabbed-primary-navigation .navigation-tab a {
+    align-items: center;
+    color: #e5e5e5;
+    display: flex;
+    height: 100%;
+    position: relative;
+    transition: color .4s;
+    text-decoration: none;
+}.pinningHeader .mainHeader {
+    align-items: center;
+    display: flex;
+    font-size: 1.2rem;
+    padding: 0 4%;
+    position: relative;
+    transition: background-color .4s;
+    z-index: 2;
+}
+.pinningHeader .secondary-navigation {
+    align-items: center;
+    display: flex;
+    flex-grow: 1;
+    height: 100%;
+    justify-content: flex-end;
+    position: absolute;
+    right: 4%;
+    top: 0;
+}
+.searchBox {
+    display: inline-block;
+    vertical-align: middle;
+}.searchTab {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+}.pinningHeader .secondary-navigation:not(.menu-navigation) .search-icon {
+    margin-right: 0;
+}
+.pinningHeader .secondary-navigation:not(.menu-navigation).search-focused .searchBox {
+    margin-left: 100px;
+}
+.searchInput {
+    align-items: center;
+    background: rgba(0, 0, 0, .75);
+    border: 1px solid hsla(0, 0%, 100%, .85);
+    display: flex;
+}.pinningHeader .secondary-navigation:not(.menu-navigation) .search-icon {
+    margin-right: 0;
+}.visually-hidden {
+    clip: rect(1px 1px 1px 1px) !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    width: 1px !important;
+}.searchInput input {
+    height: 34px;
+    line-height: 34px;
+}
+
+.searchInput input {
+    background: transparent;
+    border: none;
+    box-sizing: border-box;
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    outline: none;
+    padding: 7px 14px 7px 7px;
+    width: 212px;    
+    opacity: 1;
+    transition-duration: 300ms;
+}.searchInput .icon-close {
+    cursor: pointer;
+    font-size: 13px;
+    margin: 0 6px;
+}.icon-close:before {
+    content: "\e762";
+}.searchInput .icon-close {
+    cursor: pointer;
+    font-size: 13px;
+    margin: 0 6px;
+}[class*=" icon-"], [class^=icon-] {
+    speak: none;
+    font-family: nf-icon;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 1;
+    text-transform: none;
+    transform: translateZ(0);
+}.searchInput .search-icon {
+    padding: 0 6px;
+}
+.notifications .notifications-menu {
+    background-color: transparent;
+    border: none;
+    font-size: 1.5em;
+    line-height: 1;
+    margin-top: .2em;
+    padding: 2px 6px 3px;
+    position: relative;
+}
+.notifications .notifications-menu:hover{
+    cursor: pointer;
+}.pinningHeader .account-menu-item {
+    display: block;
+    font-size: 12px;
+    position: relative;
+    z-index: 0;
+}
+.akira-header .account-dropdown-button, .pinningHeader .account-dropdown-button {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    width: 100%;
+}.pinningHeader .secondary-navigation .nav-element a {
+    display: block;
+}.akira-header .account-dropdown-button .caret.open, .pinningHeader .account-dropdown-button .caret.open {
+    transform: rotate(180deg);
+}.akira-header .account-dropdown-button .caret, .pinningHeader .account-dropdown-button .caret {
+    border-color: #fff transparent transparent;
+    border-style: solid;
+    border-width: 5px 5px 0;
+    height: 0;
+    margin-left: 10px;
+    transition: transform 367ms cubic-bezier(.21,0,.07,1);
+    width: 0;
+}.akira-header .account-dropdown-button .profile-link, .pinningHeader .account-dropdown-button .profile-link {
+    align-items: center;
+    display: flex;
+    position: relative;
+}.akira-header .account-dropdown-button .avatar-wrapper, .pinningHeader .account-dropdown-button .avatar-wrapper {
+    position: relative;
+}
+.akira-header .account-menu-item .avatar-wrapper, .pinningHeader .account-menu-item .avatar-wrapper {
+    display: inline;
+}.akira-header .account-dropdown-button .profile-icon, .pinningHeader .account-dropdown-button .profile-icon {
+    border-radius: 4px;
+    height: 32px;
+    vertical-align: middle;
+    width: 32px;
+}
+.akira-header .account-dropdown-button .caret, .pinningHeader .account-dropdown-button .caret {
+    border-color: #fff transparent transparent;
+    border-style: solid;
+    border-width: 5px 5px 0;
+    height: 0;
+    margin-left: 10px;
+    transition: transform 367ms cubic-bezier(.21,0,.07,1);
+    width: 0;
+}
+.akira-header .account-dropdown-button .caret.open, .pinningHeader .account-dropdown-button .caret.open {
+    transform: rotate(180deg);
+}.akira-header .account-drop-down, .pinningHeader .account-drop-down {
+    margin-left: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 52px;
+    width: 220px;
+}
+.sub-menu.theme-lakira {
+    background-color: rgba(0, 0, 0, .9);
+    border: 1px solid hsla(0, 0%, 100%, .15);
+    box-sizing: border-box;
+    color: #fff;
+    cursor: default;
+    font-size: 13px;
+    line-height: 21px;
+    opacity: 0;
+    position: absolute;
+    top: 71px;
+}.sub-menu.theme-lakira a, .sub-menu.theme-lakira div, .sub-menu.theme-lakira li, .sub-menu.theme-lakira span, .sub-menu.theme-lakira ul {
+    box-sizing: border-box;
+}.akira-header .account-drop-down .profiles, .pinningHeader .account-drop-down .profiles {
+    height: auto;
+    overflow: hidden;
+    padding: 10px 0 5px;
+}
+.akira-header .account-drop-down .sub-menu-list, .pinningHeader .account-drop-down .sub-menu-list {
+    display: block;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.sub-menu.theme-lakira .sub-menu-list, .sub-menu.theme-lakira .sub-menu-list-special {
+    cursor: default;
+    height: auto;
+    padding: 1.1rem;
+}
+.sub-menu.theme-lakira a, .sub-menu.theme-lakira div, .sub-menu.theme-lakira li, .sub-menu.theme-lakira span, .sub-menu.theme-lakira ul {
+    box-sizing: border-box;
+}.akira-header .account-drop-down .profiles .sub-menu-item, .pinningHeader .account-drop-down .profiles .sub-menu-item {
+    line-height: 32px;
+}
+
+.akira-header .account-drop-down .sub-menu-item, .pinningHeader .account-drop-down .sub-menu-item {
+    display: block;
+    font-size: 13px;
+    line-height: 16px;
+    padding: 5px 10px;
+}
+.sub-menu.theme-lakira .sub-menu-item, .sub-menu.theme-lakira .sub-menu-item-special {
+    cursor: default;
+    display: block;
+    line-height: 24px;
+}
+.sub-menu.theme-lakira a, .sub-menu.theme-lakira div, .sub-menu.theme-lakira li, .sub-menu.theme-lakira span, .sub-menu.theme-lakira ul {
+    box-sizing: border-box;
+}.akira-header .account-drop-down .profiles .sub-menu-item>div, .pinningHeader .account-drop-down .profiles .sub-menu-item>div {
+    align-items: center;
+    display: flex;
+}
+
+.sub-menu.theme-lakira a, .sub-menu.theme-lakira div, .sub-menu.theme-lakira li, .sub-menu.theme-lakira span, .sub-menu.theme-lakira ul {
+    box-sizing: border-box;
+}.akira-header .account-drop-down .profiles .profile-link, .pinningHeader .account-drop-down .profiles .profile-link {
+    cursor: pointer;
+}
+.pinningHeader .secondary-navigation .nav-element a {
+    display: block;
+}.akira-header .account-menu-item .avatar-wrapper, .pinningHeader .account-menu-item .avatar-wrapper {
+    display: inline;
+}.akira-header .account-drop-down .profiles .profile-link:hover .profile-name, .pinningHeader .account-drop-down .profiles .profile-link:hover .profile-name {
+    text-decoration: underline;
+}
+
+.akira-header .account-drop-down .profiles .profile-name, .pinningHeader .account-drop-down .profiles .profile-name {
+    display: inline-block;
+    line-height: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    white-space: pre;
+    width: 100px;
+}
+.sub-menu.theme-lakira a, .sub-menu.theme-lakira div, .sub-menu.theme-lakira li, .sub-menu.theme-lakira span, .sub-menu.theme-lakira ul {
+    box-sizing: border-box;
+}.akira-header .account-drop-down .profiles .profile-icon, .pinningHeader .account-drop-down .profiles .profile-icon {
+    border-radius: 4px;
+    height: 32px;
+    margin-right: 10px;
+    vertical-align: middle;
+    width: 32px;
+}.akira-header .account-drop-down .profiles .svg-icon-profile-lock, .pinningHeader .account-drop-down .profiles .svg-icon-profile-lock {
+    color: #999;
+    height: 16px;
+    width: 16px;
+}
+.t_17d527 .svg-icon {
+    border: 1px solid transparent;
+    margin: 0 -1px;
+    overflow: visible;
+    transform: scale(1);
+}@media screen and (min-width: 1100px)
+{.pinningHeader .secondary-navigation:not(.menu-navigation) .account-drop-down .responsive-links {
+    display: none;
+}}
+
+.akira-header .account-drop-down .responsive-links, .pinningHeader .account-drop-down .responsive-links {
+    border-top: 1px solid hsla(0, 0%, 100%, .25);
+    display: none;
+    padding: 10px 0;
+}
+.akira-header .account-drop-down .sub-menu-list, .pinningHeader .account-drop-down .sub-menu-list {
+    display: block;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.sub-menu.theme-lakira .sub-menu-list, .sub-menu.theme-lakira .sub-menu-list-special {
+    cursor: default;
+    height: auto;
+    padding: 1.1rem;
+}
+.sub-menu.theme-lakira a, .sub-menu.theme-lakira div, .sub-menu.theme-lakira li, .sub-menu.theme-lakira span, .sub-menu.theme-lakira ul {
+    box-sizing: border-box;
+}
+.akira-header .account-drop-down .account-links, .pinningHeader .account-drop-down .account-links {
+    padding-bottom: 10px;
+}
+
+.akira-header .account-drop-down .sub-menu-list, .pinningHeader .account-drop-down .sub-menu-list {
+    display: block;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.sub-menu.theme-lakira .sub-menu-list, .sub-menu.theme-lakira .sub-menu-list-special {
+    cursor: default;
+    height: auto;
+    padding: 1.1rem;
+}
+.sub-menu.theme-lakira a, .sub-menu.theme-lakira div, .sub-menu.theme-lakira li, .sub-menu.theme-lakira span, .sub-menu.theme-lakira ul {
+    box-sizing: border-box;
+}.akira-header .account-drop-down .sub-menu-item, .pinningHeader .account-drop-down .sub-menu-item {
+    display: block;
+    font-size: 13px;
+    line-height: 16px;
+    padding: 5px 10px;
+}
+
+.sub-menu.theme-lakira .sub-menu-item, .sub-menu.theme-lakira .sub-menu-item-special {
+    cursor: default;
+    display: block;
+    line-height: 24px;
+}
+.sub-menu.theme-lakira a, .sub-menu.theme-lakira div, .sub-menu.theme-lakira li, .sub-menu.theme-lakira span, .sub-menu.theme-lakira ul {
+    box-sizing: border-box;
+}.pinningHeader .secondary-navigation .nav-element a.sub-menu-link-icon {
+    align-items: center;
+    display: flex;
+}
+
+.akira-header .account-drop-down .sub-menu-item>a, .pinningHeader .account-drop-down .sub-menu-item>a {
+    display: inline-block;
+    text-transform: none;
+    width: 100%;
+}
+.pinningHeader .secondary-navigation .nav-element a {
+    display: block;
+}
+.sub-menu.theme-lakira .sub-menu-link {
+    color: #fff;
+    display: inline-block;
+    text-transform: none;
+    width: 100%;
+}
+.sub-menu.theme-lakira a, .sub-menu.theme-lakira div, .sub-menu.theme-lakira li, .sub-menu.theme-lakira span, .sub-menu.theme-lakira ul {
+    box-sizing: border-box;
+}.pinningHeader .secondary-navigation .nav-element a.sub-menu-link-icon svg {
+    color: #b3b3b3;
+    padding: 0 13px 0 5px;
+}.akira-header .account-drop-down .sign-out-links, .pinningHeader .account-drop-down .sign-out-links {
+    border-top: 1px solid hsla(0, 0%, 100%, .25);
+    padding: 10px 0;
+}
+
+.akira-header .account-drop-down .sub-menu-list, .pinningHeader .account-drop-down .sub-menu-list {
+    display: block;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.sub-menu.theme-lakira .sub-menu-list, .sub-menu.theme-lakira .sub-menu-list-special {
+    cursor: default;
+    height: auto;
+    padding: 1.1rem;
+}.akira-header .account-drop-down .sub-menu-item, .pinningHeader .account-drop-down .sub-menu-item {
+    display: block;
+    font-size: 13px;
+    line-height: 16px;
+    padding: 5px 10px;
+}
+.sub-menu.theme-lakira .sub-menu-item, .sub-menu.theme-lakira .sub-menu-item-special {
+    cursor: default;
+    display: block;
+    line-height: 24px;
+}
+
+.sub-menu.theme-lakira a, .sub-menu.theme-lakira div, .sub-menu.theme-lakira li, .sub-menu.theme-lakira span, .sub-menu.theme-lakira ul {
+    box-sizing: border-box;
+}.akira-header .account-drop-down .sign-out-links .sub-menu-link, .pinningHeader .account-drop-down .sign-out-links .sub-menu-link {
+    text-align: center;
+}
+
+.akira-header .account-drop-down .sub-menu-item>a, .pinningHeader .account-drop-down .sub-menu-item>a {
+    display: inline-block;
+    text-transform: none;
+    width: 100%;
+}
+.pinningHeader .secondary-navigation .nav-element a {
+    display: block;
+}
+.sub-menu.theme-lakira .sub-menu-link {
+    color: #fff;
+    display: inline-block;
+    text-transform: none;
+    width: 100%;
+}a{
+    text-decoration: none;
+}
+
+@media screen and (min-width: 1330px)
+{.pinningHeader .secondary-navigation .nav-element:not(:last-child) {
+    margin-right: 15px;
+}
+}
+.pinningHeader .secondary-navigation .nav-element:not(:last-child) {
+    margin-right: 10px;
+}
+@media screen and (min-width: 1500px)
+{.pinningHeader .secondary-navigation {
+    right: 60px;
+}
+}
+svg:not(:root) {
+    overflow: hidden;
+}
+
+
+
+
+
+@media screen and (min-width: 1330px)
+{.pinningHeader .tabbed-primary-navigation .navigation-menu, .pinningHeader .tabbed-primary-navigation .navigation-tab {
+    margin-left: 20px;
+}}
+@media screen and (min-width: 885px)
+{.pinningHeader .tabbed-primary-navigation:not(.has-dropdown-menu) .navigation-tab {
+    display: block;
+}}
+
+
+@media screen and (min-width: 885px)
+{.pinningHeader .tabbed-primary-navigation:not(.has-dropdown-menu) .navigation-menu {
+    display: none;
+}}
+@media screen and (min-width: 1330px)
+{.pinningHeader .tabbed-primary-navigation .navigation-menu, pinningHeader .tabbed-primary-navigation .navigation-tab {
+    margin-left: 20px;
+}}
+[class*=" icon-"], [class^=icon-] {
+    speak: none;
+    font-family: nf-icon;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 1;
+    text-transform: none;
+    transform: translateZ(0);
+}
+
+
+
+
+
+
+@media screen and (min-width: 1200px)
+{.pinningHeader .mainHeader {
+    font-size: 14px;
+}}
+@media screen and (min-width: 1500px)
+{.pinningHeader .mainHeader {
+    padding: 0 60px;
+}}
+@media screen and (min-width: 950px)
+{.pinningHeader .mainHeader {
+    height: 68px;
+}
+.pinningHeader .mainHeader .logo {
+    font-size: 25px;
+}
+}
+@media screen and (min-width: 1150px)
+{.pinningHeader .mainHeader .logo {
+    margin-right: 25px;
+}}

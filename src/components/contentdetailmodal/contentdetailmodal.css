@@ -1,0 +1,166 @@
+.contentDetailModal{
+    display: block;
+    position: fixed;
+    align-items: center;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+
+}
+.contentDetailModal .contentDetailModalContent{
+    margin-left: 18%;
+    width: 60%;
+    height: max-content;
+    margin-top: 3%;
+    background-color: rgb(24,24,24);
+    border-radius: 10px;
+    padding: 1%;
+}
+.contentDetailModal .modalPlayerContainer{
+    height: 65vh;
+    max-height: 65vh;
+    width: 100%;
+}
+.modalPlayerBottomSide .bottomleftside {
+    position: absolute;
+    top: 63vh;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    margin-left: 3%;
+}
+.modalPlayerBottomSide .addToList{
+    cursor: pointer;
+}
+.modalPlayerBottomSide .likeControl{
+    cursor: pointer;
+}
+.likeControlContainer {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-50%) scale(1) translateZ(0px);
+}
+.likeControlContainer{
+    margin-left: 0.1rem;
+    margin-top: -0.1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: opacity 0.1s linear 0s, transform 0.3s cubic-bezier(0.5, 0, 0.1, 1) 0s, all 0.2s linear 0s;
+}
+.likeControlContainerBody{
+    width: 13rem;
+    background-color: rgb(35, 35, 35);
+    border-radius: 3rem;
+    box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 2px 0px, rgba(0, 0, 0, 0.5) 0px 8px 16px 0px;
+    display: flex;
+    padding: 0.8rem;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.likeControlContainerBody>div{
+    margin: 0px 0.2rem;
+}.activeLike{
+    border: 2px solid black;
+    border-radius: 100% ;
+    padding: 7px;
+}
+.likeOpeContainer a{
+    cursor: pointer;
+}.passive{
+    display: none;
+}
+.contentInfos{
+    display: flex;
+    width: 98%;
+    margin-top: 10px;
+    margin-left: 2%;
+    margin-right: 2%;
+    height: max-content;
+}
+.contentInfos .contentInfoLeftSide{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}.contentInfoTopSide{
+    align-items: center;
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}.contentWarnings{
+    margin-top: -0.1rem;
+    font-size: 14px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.5;
+}
+.contentInfoRightSide{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}.tagItem{
+    color: #ddd;
+    cursor: pointer;
+    margin: 0;
+    outline-color: #fff;
+}
+.tagItem a{
+    color: #ddd;
+    cursor: pointer;
+}
+.tagItem a:hover{
+    text-decoration: underline;
+}.contentAnalogues{
+    display: flex;
+    flex-direction: column;
+    width: 98%;
+    margin-top: 10px;
+    margin-left: 2%;
+    margin-right: 2%;
+    height: max-content;
+}
+.contentAnalogues h3{
+    font-size: 24px;
+font-weight: 500;
+margin-bottom: 20px;
+margin-top: 48px;
+color: white;
+}
+@media (min-aspect-ratio: 7 / 9)
+{.analoguesContainer{
+    grid-template-columns: repeat(3, 1fr);
+}}
+
+@media (min-aspect-ratio: 1 / 3)
+{.analoguesContainer {
+    grid-template-columns: repeat(2, 1fr);
+}}
+.analoguesContainer {
+    grid-gap: 1em;
+    align-items: stretch;
+    display: grid;
+    justify-items: stretch;
+}
+
+@media (max-width:900px) {
+    .contentDetailModal .contentDetailModalContent{
+        margin-left: 4%;
+        width: 86%;
+        height: max-content;
+        margin-top: 3%;
+        background-color: rgb(24,24,24);
+        border-radius: 10px;
+        padding: 3%;
+    } 
+    .likeControl{
+        display: none;
+    }
+}

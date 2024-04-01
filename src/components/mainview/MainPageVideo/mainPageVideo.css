@@ -1,0 +1,122 @@
+.billboard {
+  width: max-content;
+  position: relative;
+  height: 100vh;
+  left: 0;
+  margin-top: -70px;
+  top: 0;
+}
+
+.mainVideoFront {
+  width: 100%;
+  height: 100%;
+  top: 20px;
+}
+.mainVideoFront .leftBar{
+    position: absolute;
+    width: 50%;
+    top: 20%;
+    left: 3%;
+}
+.mainVideoFront .leftBarText {
+  color: #fff;
+  font-size: 1.2vw;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 0.1vw;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
+  width: 100%;
+}
+.mainVideoFront .leftBarCatText span{
+    color: black;
+    font-size: 1.2vw;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 0.1vw;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
+    background-color: white;
+    border-radius: 10px;
+    padding: 7px;
+  }.mainVideoFront .leftBarCatText {
+    margin-top: 0.1vw;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
+    width: 100%;
+    
+  }
+.leftBarButtons{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: first baseline;
+    color: white;
+    margin-top:20px;
+
+}
+.leftBarPlayButton{
+    width: max-content;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    background-color: #fff;
+    padding: 5px;
+    padding-left: 2rem;
+    padding-right: 2.4rem;
+    margin-right: 10px;
+    text-decoration: none !important;
+    border-radius: 3px;
+    color: black;
+}.leftBarPlayButton span{
+    font-size: 1.6rem;
+    font-weight: 400;
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 2.4rem;
+}
+.leftBarInfoButton{
+    width: max-content;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    background-color: gray;
+    opacity: 0.8;
+    padding: 5px;
+    padding-left: 2rem;
+    border-radius: 3px;
+    padding-right: 2.4rem;
+    text-decoration: none !important;
+    color:white;
+}.leftBarInfoButton span{
+    font-size: 1.6rem;
+    font-weight: 400;
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 2.4rem;
+}
+.leftBarPlayButton:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.75);
+}.leftBarInfoButton:hover{
+    cursor: pointer;
+    background-color: rgba(109, 109, 110, 0.4);
+}
+
+@media (max-height:432px) {
+    .mainVideoFront .leftBar{
+        position: absolute;
+        width: 50%;
+        top: 10%;
+        left: 3%;
+    }
+}
+@media (max-height:347) {
+    .mainVideoFront .leftBar{
+        position: absolute;
+        width: 50%;
+        top: 10%;
+        left: 3%;
+        display: none !important;
+    }
+}
