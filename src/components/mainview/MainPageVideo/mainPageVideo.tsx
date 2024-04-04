@@ -1,13 +1,27 @@
 import { FaInfo, FaInfoCircle, FaPlay, FaSearch, FaSync } from 'react-icons/fa'
 import './mainPageVideo.css'
 import ReactPlayer from 'react-player'
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import ContentDetailModal from '../../contentdetailmodal/contentdetailmodal'
+import { useSelector, useDispatch } from 'react-redux'
+import { openModal } from '../../../store/slices/contentDetailContainerControlSlice'
+
 type Props = {
 }
 
 const MainPageVideo = (props: Props) => {
     const [photoControl, setphotoControl] = useState<boolean>(false)
+    const modalOpen = useSelector((state:any) => state.contentControl.task);
+     const dispatch = useDispatch();
+
+    const handleOpenModal = () => {
+        dispatch(openModal());
+    };
+    useEffect(() => {
+        
+        
+    })
+    
     return (
         <div className="billboard" style={{ width: '100%' }}>
           {!photoControl?(
@@ -16,8 +30,7 @@ const MainPageVideo = (props: Props) => {
             height="100%"
             style={{ width: 'max-content', height: '100%', display: 'block' }}
             url={"https://res.cloudinary.com/dkzqdpw84/video/upload/v1707119257/samples/cld-sample-video.mp4"}
-            playing={false}
-
+            playing={true}
             onEnded={()=>setphotoControl(true)}
         />
           ):(
@@ -38,15 +51,15 @@ const MainPageVideo = (props: Props) => {
                             <FaPlay style={{color:'black',fontSize:'1.6rem',marginRight:'5px'}}/>
                             <span>Oynat</span>
                         </a>
-                        <div  className="leftBarInfoButton">
+                        <div  className="leftBarInfoButton" onClick={()=>handleOpenModal()}>
                             <FaInfoCircle style={{color:'white',fontSize:'1.6rem',marginRight:'5px'}}/>
-                            <span>Daha Fazla Bilgi</span>
+                            <span >Daha Fazla Bilgi</span>
                         </div>
                     </div>
                 </div>
             
             </div>
-            <ContentDetailModal></ContentDetailModal>
+            <ContentDetailModal />
         </div>
 
     )

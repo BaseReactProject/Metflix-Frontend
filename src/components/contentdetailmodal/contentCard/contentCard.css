@@ -14,7 +14,7 @@
     cursor: pointer;
     margin: .5em;
     min-height: 22em;
-    width: 100%;
+    width: 95%;
     overflow: hidden;
     position: relative;
 }.titleCard--container .titleCard-imageWrapper {

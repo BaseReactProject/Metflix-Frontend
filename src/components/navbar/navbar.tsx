@@ -11,7 +11,7 @@ const Navbar = (props: Props) => {
       <div className="pinningHeader">
         <div className="pinningHeaderContainer">
           {/* <div style={{overflow:'auto'}}></div> */}
-          <div className="mainHeader">
+          <div className="mainHeader" >
            
             <img style={{width:'10%',height:'80%'}} src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" className="logo icon-logoUpdate active"/>
            

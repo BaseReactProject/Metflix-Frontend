@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './contentCard.css'
-type Props = {}
+type Props = {
+}
 
 const ContentCard = (props: Props) => {
     const [isOnTheList, setisOnTheList] = useState<boolean>(false)

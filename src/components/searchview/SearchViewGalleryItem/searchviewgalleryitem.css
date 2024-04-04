@@ -1,0 +1,12 @@
+.ltr-1cjyscz:first-child {
+    padding-left: 0px;
+}
+.ltr-1cjyscz {
+    padding: 0px 0.2vw;
+}.title-card:not(.loadingTitle) {
+    display: block;
+}
+.title-card {
+    position: relative;
+    z-index: 1;
+}
