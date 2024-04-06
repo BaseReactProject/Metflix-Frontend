@@ -1,15 +1,28 @@
 import React, { useState } from 'react'
 import './signin.css'
+import { UserForLoginDto, UserForRegisterDto } from '../../../core/models/UserResponses'
+import authService from '../../../core/services/auth-service'
+import SecurityKeyModal from './securitykey/securitykeymodal'
+import { useDispatch } from 'react-redux'
+import { openSecurityModal } from '../../../store/slices/auth/securityModalSlice'
 type Props = {}
 
 const SignIn = (props: Props) => {
-    const [signUpControl, setsignUpControl] = useState<boolean>(false)
-    const [signUpFormData, setsignUpFormData] = useState({
-        firstnamesignin: '',
-        lastnamesignin: '',
-        mailsignin: '',
-        passwordsignin: '',
+    const [signUpControl, setsignUpControl] = useState<boolean>(false);
+    const dispatch = useDispatch();
+    const [signUpFormData, setsignUpFormData] = useState<UserForRegisterDto>({
+        email: "",
+        password: "",
+        firstName: "",
+        lastName: "",
     });
+    const [signInFormData, setsignInFormData] = useState<UserForLoginDto>({
+        email: "",
+        password: "",
+        authenticatorCode:null
+    });
+    const [modalControl, setModalControl] = useState<boolean>(false);
+
     const handleSignUpInputChange = (e: any) => {
         const { name, value } = e.target;
         setsignUpFormData((prevsignUpFormData) => ({
@@ -18,9 +31,21 @@ const SignIn = (props: Props) => {
         }));
     };
 
-    const handleSignUpSubmit = (e: any) => {
+    const handleSignUpSubmit = async (e: any)  => {
         e.preventDefault();
-        console.log(signUpFormData);
+       await authService.Register(signUpFormData).then((r)=>dispatch(openSecurityModal())).catch((r)=>console.log(r));
+    };
+
+    const handleSignInInputChange = (e: any) => {
+        const { name, value } = e.target;
+        setsignInFormData((prevsignUpFormData) => ({
+            ...prevsignUpFormData,
+            [name]: value,
+        }));
+    };
+    const handleSignInSubmit = async (e: any)  => {
+        e.preventDefault();
+       await authService.Login(signInFormData,"mainpage");
     };
     return (
         <>
@@ -29,48 +54,44 @@ const SignIn = (props: Props) => {
                     <div className="content">
                         <h2>Kayıt Ol</h2>
 
-                        <form onSubmit={handleSignUpSubmit} className="form">
+                        <form onSubmit={handleSignUpSubmit} name='signUp' className="form">
                             <div className="inputBox">
-                                <label htmlFor="firstnamesignin">İsminiz</label>
+                                <label htmlFor="firstName">İsminiz</label>
                                 <input
-                                    name='firstnamesignin'
+                                    name='firstName'
                                     type="text"
                                     required
                                     placeholder='İsminiz'
-                                    value={signUpFormData.firstnamesignin}
                                     onChange={handleSignUpInputChange}
                                 />
                             </div>
                             <div className="inputBox">
-                                <label htmlFor="lastnamesignin">Soyisminiz</label>
+                                <label htmlFor="lastName">Soyisminiz</label>
                                 <input
-                                    name='lastnamesignin'
+                                    name='lastName'
                                     type="text"
                                     required
                                     placeholder='Soyisminiz'
-                                    value={signUpFormData.lastnamesignin}
                                     onChange={handleSignUpInputChange}
                                 />
                             </div>
                             <div className="inputBox">
-                                <label htmlFor="mailsignin">E-Posta Adresi:</label>
+                                <label htmlFor="email">E-Posta Adresi:</label>
                                 <input
-                                    name='mailsignin'
+                                    name='email'
                                     type="email"
                                     required
                                     placeholder='E-posta Adresiniz'
-                                    value={signUpFormData.mailsignin}
                                     onChange={handleSignUpInputChange}
                                 />
                             </div>
                             <div className="inputBox">
-                                <label htmlFor="passwordsignin">Şifreniz:</label>
+                                <label htmlFor="password">Şifreniz:</label>
                                 <input
                                     type="password"
-                                    name='passwordsignin'
+                                    name='password'
                                     required
                                     placeholder='Şifreniz'
-                                    value={signUpFormData.passwordsignin}
                                     onChange={handleSignUpInputChange}
                                 />
                             </div>
@@ -79,7 +100,7 @@ const SignIn = (props: Props) => {
                                 <a onClick={() => setsignUpControl(true)}>Giriş Yap</a>
                             </div>
                             <div className="inputBox">
-                                <input type="submit" value="Giriş Yap" />
+                                <input type="submit" value="Kayıt Ol" />
                             </div>
                         </form>
 
@@ -91,16 +112,16 @@ const SignIn = (props: Props) => {
                     <div className="content">
                         <h2>Giriş Yap</h2>
 
-                        <form action='post' className="form">
+                        <form action='post' name='login' onSubmit={handleSignInSubmit} className="form">
 
                             <div className="inputBox">
-                                <label htmlFor="mailsignin">E-Posta Adresi:</label>
-                                <input name='mailsignin' type="text" required placeholder='E-posta Adresiniz' />
+                                <label htmlFor="email">E-Posta Adresi:</label>
+                                <input name='email' type="text" onChange={handleSignInInputChange} required placeholder='E-posta Adresiniz' />
 
                             </div>
                             <div className="inputBox">
-                                <label htmlFor="passwordsignin">Şifreniz:</label>
-                                <input type="password" name='passwordsignin' required placeholder='Şifreniz' />
+                                <label htmlFor="password">Şifreniz:</label>
+                                <input type="password" name='password' onChange={handleSignInInputChange} required placeholder='Şifreniz' />
 
                             </div>
 
@@ -120,6 +141,7 @@ const SignIn = (props: Props) => {
 
                 </div>
             )}
+            <SecurityKeyModal/>
 
 
 

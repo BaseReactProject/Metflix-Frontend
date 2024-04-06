@@ -1,0 +1,173 @@
+.securityKeyModal
+{
+  position: fixed;
+  width: 40%;
+  height: 40%;
+  background: #222;  
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10%;
+
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,9);
+}
+.signUp{
+    height: 70%;
+}
+a:hover{
+    cursor: pointer;
+}
+ .securityKeyModal .content 
+{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+ .securityKeyModal .content h2 
+{
+  font-size: 2em;
+  color: #0f0;
+}
+ .securityKeyModal .content .form 
+{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+ .securityKeyModal .content .form .inputBox
+{
+  position: relative;
+  width: 100%;
+}
+.securityKeyModal .content .form .inputBox label
+{
+  color: #0f0;
+}
+ .securityKeyModal .content .form .inputBox input 
+{
+  position: relative;
+  width: 100%;
+  background: #333;
+  border: none;
+  outline: none;
+  padding: 25px 10px 7.5px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1em;
+}
+ .securityKeyModal .content .form .inputBox i 
+{
+  position: absolute;
+  left: 0;
+  font-style: normal;
+  color: #aaa;
+  transition: 0.5s;
+  pointer-events: none;
+}
+.securityKeyModal .content .form .inputBox input:focus ~ i,
+.securityKeyModal .content .form .inputBox input:valid ~ i
+{
+  transform: translateY(-7.5px);
+  font-size: 0.8em;
+  color: #fff;
+}
+.securityKeyModal .content .form .links 
+{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.securityKeyModal .content .form .links a 
+{
+  color: #fff;
+  text-decoration: none;
+}
+.securityKeyModal .content .form .links a:nth-child(2)
+{
+  color: #0f0;
+  font-weight: 600;
+}
+.securityKeyModal .content .form .inputBox input[type="submit"]
+{
+  padding: 10px;
+  background: #0f0;
+  color: #000;
+  font-weight: 600;
+  font-size: 1.35em;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}.securityKeyModal .container form .form-row{
+    display: flex;
+    margin: 32px 0;
+  }
+  .securityKeyModal form .form-row .input-data{
+    width: 100%;
+    height: 40px;
+    margin: 0 20px;
+    position: relative;
+  }.securityKeyModal .input-data input,
+  .securityKeyModal .input-data input:focus ~ label, .textarea textarea:focus ~ label,
+  .securityKeyModal .input-data input:valid ~ label, .textarea textarea:valid ~ label{
+    transform: translateY(-20px);
+    font-size: 14px;
+    width: 100%;
+    color: #aaa;
+    height: 100%;
+    background-color: #333;
+  }.securityKeyModal .input-data label{
+    position: absolute;
+    pointer-events: none;
+    bottom: 20px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+  .securityKeyModal .input-data .underline{
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+  }
+  .securityKeyModal.input-data .underline:before{
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 100%;
+    background: #3498db;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+  }
+  .securityKeyModal .input-data input:focus ~ .underline:before,
+  .securityKeyModal .input-data input:valid ~ .underline:before,
+  .securityKeyModal .textarea textarea:focus ~ .underline:before,
+  .securityKeyModal .textarea textarea:valid ~ .underline:before{
+    transform: scale(1);
+  }
+
+@media (max-width: 900px)
+{
+  .securityKeyModal
+  {
+    position: absolute;
+    width: 70%;
+    height: max-content;
+    background: #222;  
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10%;
+  
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,9);
+  }
+}

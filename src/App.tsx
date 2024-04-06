@@ -1,30 +1,23 @@
-
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import toastr from "toastr";
 import './App.css';
-import SeriesPage from './pages/SeriesPage/seriesPage';
-import MoviePage from './pages/MoviePage/moviePage';
-import MainPage from './pages/MainPage/mainpage';
-import SearchPage from './pages/SearchPage/searchpage';
-import LoginPage from './pages/LoginPage/loginPage';
+import { OverlayLoader } from './components/mainComponents/OverlayLoader/OverlayLoader';
+import RouteDefinitions from './components/mainComponents/Routes/RouteDefinitions';
+import axiosInstance from "./core/interceptors/axios-interceptor";
+import { useEffect } from "react";
 
 function App() {
+ 
+  useEffect(() => {
+    axiosInstance.get("Brands?PageIndex=0&PageSize=10").then((r)=>console.log(r)).catch((r)=>console.log(r));
+  
+    
+  }, [])
+  
   return (
     <>
-    
-      <BrowserRouter>
-        <Routes>
-          <Route path='/moviepage' element={<MoviePage/>}>
-          </Route>
-          <Route path='/seriespage' element={<SeriesPage/>}>
-          </Route>
-          <Route path='/mainpage' element={<MainPage/>}>
-          </Route>
-          <Route path='/searchpage' element={<SearchPage/>}>
-          </Route>
-          <Route path='/authpage' element={<LoginPage/>}>
-          </Route>
-        </Routes>
-      </BrowserRouter>
+
+     <OverlayLoader />
+			<RouteDefinitions />
     </>
   );
 }
