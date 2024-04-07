@@ -20,6 +20,13 @@ class AuthService {
 			toastr.error("Bir hata oluştu lütfen tekrar deneyin");
 		});
 	}
+	async ForgetPassword(email: string) {
+		return await axios.get(BASE_API_URL + "Auth/ForgetPassword/"+email).then((r) => {
+			toastr.success("Mail Adresinize bir şifre değiştirme bağlantısı gönderdik. ");
+		}).catch((e) => {
+			toastr.error("Bir hata oluştu lütfen tekrar deneyin");
+		});
+	}
 	VerifyEmailAuthenticator(model: VerifyEmailAuthenticatorModel) {
 		return axiosInstance.get("Auth/VerifyEmailAuthenticator?ActivationKey=" + model.activationKey);
 	}

@@ -9,7 +9,6 @@ import toastr from 'toastr'
 type Props = {}
 
 const SecurityKeyModal = (props: Props) => {
-  const [signUpControl, setsignUpControl] = useState(false);
   const [securityKey, setsecurityKey] = useState<string>();
   const modalControl = useSelector((state: any) => state.securityModalControl.task);
   const dispatch = useDispatch();

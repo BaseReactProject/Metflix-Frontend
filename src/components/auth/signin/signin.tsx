@@ -5,6 +5,8 @@ import authService from '../../../core/services/auth-service'
 import SecurityKeyModal from './securitykey/securitykeymodal'
 import { useDispatch } from 'react-redux'
 import { openSecurityModal } from '../../../store/slices/auth/securityModalSlice'
+import { openForgetPwModal } from '../../../store/slices/auth/forgetPasswordModalSlice'
+import ForgetPasswordModal from './forgetpassword/forgetpasswordmodal'
 type Props = {}
 
 const SignIn = (props: Props) => {
@@ -21,7 +23,6 @@ const SignIn = (props: Props) => {
         password: "",
         authenticatorCode:null
     });
-    const [modalControl, setModalControl] = useState<boolean>(false);
 
     const handleSignUpInputChange = (e: any) => {
         const { name, value } = e.target;
@@ -125,7 +126,7 @@ const SignIn = (props: Props) => {
 
                             </div>
 
-                            <div className="links"> <a href="#">Şifremi Unuttum</a> <a onClick={() => setsignUpControl(false)}>Kayıt Ol</a>
+                            <div className="links"> <a href="#" onClick={()=>dispatch(openForgetPwModal())}>Şifremi Unuttum</a> <a onClick={() => setsignUpControl(false)}>Kayıt Ol</a>
 
                             </div>
 
@@ -142,6 +143,7 @@ const SignIn = (props: Props) => {
                 </div>
             )}
             <SecurityKeyModal/>
+            <ForgetPasswordModal/>
 
 
 
