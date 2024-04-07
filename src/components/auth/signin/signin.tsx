@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './signin.css'
-import { UserForLoginDto, UserForRegisterDto } from '../../../core/models/UserResponses'
+import { UserForLoginDto, UserForRegisterDto } from '../../../core/models/UserModels'
 import authService from '../../../core/services/auth-service'
 import SecurityKeyModal from './securitykey/securitykeymodal'
 import { useDispatch } from 'react-redux'

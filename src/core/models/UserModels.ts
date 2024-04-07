@@ -9,3 +9,7 @@ export interface UserForLoginDto {
     password: string;
     authenticatorCode: string | null;
 }
+export interface UpdateUserPasswordDto{
+    fakeId:string;
+    password:string
+}

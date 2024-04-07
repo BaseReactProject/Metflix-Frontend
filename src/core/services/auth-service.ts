@@ -1,7 +1,7 @@
 import axios from "axios";
 import { BASE_API_URL } from "../../environment/environment";
 import axiosInstance from "../interceptors/axios-interceptor";
-import { UserForLoginDto, UserForRegisterDto } from "../models/UserResponses";
+import { UpdateUserPasswordDto, UserForLoginDto, UserForRegisterDto } from "../models/UserModels";
 import { VerifyEmailAuthenticatorModel } from "../models/EmailModels";
 import toastr from 'toastr'
 
@@ -23,6 +23,16 @@ class AuthService {
 	async ForgetPassword(email: string) {
 		return await axios.get(BASE_API_URL + "Auth/ForgetPassword/"+email).then((r) => {
 			toastr.success("Mail Adresinize bir şifre değiştirme bağlantısı gönderdik. ");
+		}).catch((e) => {
+			toastr.error("Bir hata oluştu lütfen tekrar deneyin");
+		});
+	}
+	async UpdatePassword(updateUserCommand: UpdateUserPasswordDto,locationlink:string) {
+		return await axios.post(BASE_API_URL + "Auth/UpdatePassword",updateUserCommand).then((r) => {
+			toastr.success("Şifreniz Başarılı Bir Şekilde Giriş Yapabilirsiniz Yönlendiriliyorsunuz. ");
+			setTimeout(() => {
+				window.location.href = "/" + locationlink; 
+			}, 500);
 		}).catch((e) => {
 			toastr.error("Bir hata oluştu lütfen tekrar deneyin");
 		});

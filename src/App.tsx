@@ -6,12 +6,6 @@ import axiosInstance from "./core/interceptors/axios-interceptor";
 import { useEffect } from "react";
 
 function App() {
- 
-  useEffect(() => {
-    axiosInstance.get("Brands?PageIndex=0&PageSize=10").then((r)=>console.log(r)).catch((r)=>console.log(r));
-  
-    
-  }, [])
   
   return (
     <>
