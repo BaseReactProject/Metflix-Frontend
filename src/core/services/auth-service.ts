@@ -4,6 +4,7 @@ import axiosInstance from "../interceptors/axios-interceptor";
 import { UpdateUserPasswordDto, UserForLoginDto, UserForRegisterDto } from "../models/UserModels";
 import { VerifyEmailAuthenticatorModel } from "../models/EmailModels";
 import toastr from 'toastr'
+import tokenService from "./token-service";
 
 class AuthService {
 	Register(model: UserForRegisterDto) {
@@ -39,6 +40,13 @@ class AuthService {
 	}
 	VerifyEmailAuthenticator(model: VerifyEmailAuthenticatorModel) {
 		return axiosInstance.get("Auth/VerifyEmailAuthenticator?ActivationKey=" + model.activationKey);
+	}
+	LogOut(locationlink:string){
+		tokenService.deleteToken();
+		toastr.success("Başarılı Bir Şekilde Çıkış Yapılıyor");
+		setTimeout(() => {
+			window.location.href = "/" + locationlink; 
+		}, 300);
 	}
 }
 
