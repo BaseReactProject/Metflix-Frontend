@@ -118,7 +118,7 @@ const Navbar = (props: Props) => {
                           </a>
                         </li>
                         <li className="sub-menu-item profile-link" role='listItem'>
-                          <a onClick={()=>authService.LogOut("authpage")} className="sub-menu-link sub-menu-link-icon">
+                          <a onClick={()=>authService.ProfileLogOut("/profileloginpage")} className="sub-menu-link sub-menu-link-icon">
                           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-mirrorinrtl="true" className="ltr-4z3qvp e1svuwfo1" data-name="LinkOut" aria-labelledby=":rbm:" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M4 2C2.89543 2 2 2.89543 2 4V20C2 21.1046 2.89543 22 4 22H20C21.1046 22 22 21.1046 22 20V12H20V20H4V4L12 4V2H4ZM15 4H18.5858L9.29289 13.2929L10.7071 14.7071L20 5.41421V9H22V3C22 2.44772 21.5523 2 21 2H15V4Z" fill="currentColor"></path></svg>
                             <span>Profilden Çık</span>
                           </a>
@@ -138,7 +138,7 @@ const Navbar = (props: Props) => {
 
                       </ul>
                       <ul className="sub-menu-list sign-out-links">
-                      <li className="sub-menu-item"><a className="sub-menu-link " href="/SignOut?lnkctr=mL">Netflix oturumunu kapat</a></li>
+                      <li className="sub-menu-item"><a className="sub-menu-link " onClick={()=>authService.LogOut("profileloginpage")}>Netflix oturumunu kapat</a></li>
                       </ul>
                     </div>
                   </div>)}

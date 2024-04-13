@@ -46,7 +46,7 @@ const SignIn = (props: Props) => {
     };
     const handleSignInSubmit = async (e: any)  => {
         e.preventDefault();
-       await authService.Login(signInFormData,"mainpage");
+       await authService.Login(signInFormData,"profileloginpage");
     };
     return (
         <>

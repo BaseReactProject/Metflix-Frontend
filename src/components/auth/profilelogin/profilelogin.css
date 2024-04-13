@@ -1,0 +1,320 @@
+.profilelogin
+{
+  position: absolute;
+  width: 70%;
+  height: 40%;
+  background: #222;  
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10%;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,9);
+}
+
+a:hover{
+    cursor: pointer;
+}
+ .profilelogin .content 
+{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+ .profilelogin .content h1
+{
+  font-size: 3em;
+  color: #0f0;
+}
+a:hover{
+  cursor: pointer;
+}
+.profilelogin .svg-icon-profile-lock {
+  color: #666;
+  height: 20px;
+  width: 20px;
+}
+.profilelogin .profilerow{
+  margin-top: -10px;
+  display: flex;
+  flex-direction:row;
+  justify-content: space-between;
+  width: 100%;
+  height: 40%;
+}
+.profilelogin .profilerow .profilecontainer{
+  display: flex;
+  flex-direction:column;
+  flex-wrap: wrap;
+  width: 18%;
+  height: 40%;
+  align-items: center;
+  justify-content: center;
+}
+.profilelogin .profilerow .profilecontainer a{
+  display: flex;
+  flex-direction:column;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 40%;
+  align-items: center;
+  justify-content: center;
+}
+.profilelogin .profilerow .profilecontainer a img{
+  width: 100%;
+  height: 100%;
+}
+.profilelogin .profilerow .profilecontainer a h2{
+  font-size: 1.4em;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #0f0;
+}
+.profilelogin .profilerow .profilecontainer a:hover{
+
+  border-top: 2px solid white;
+  color: white;
+}
+.profilelogin .profilerow .profilecontainer a:hover h2{
+  color: white;
+
+}
+.profiles-create-container{
+  background: #141414;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  top: 0;
+  z-index: 300000000000000000000;
+}.profiles-create-container .centered-div {
+  align-items: center;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 100;
+}.profile-pin-prompt-status {
+  color: #aaa;
+  font-size: 1.3vw;
+}
+.profile-pin-prompt-label {
+  color: #fff;
+  font-size: 4.5vw;
+  margin: .5em 0 1em;
+  opacity: 1;
+  transition: opacity .4s ease-out;
+  width: 100%;
+}.profile-pin-prompt-pad-wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}.profile-pin-prompt .pin-input-container {
+  border: none;
+  color: #000;
+  direction: ltr /*!rtl:ignore*/;
+  display: flex;
+  flex: 0 1 auto;
+  margin: .5em;
+}.profile-pin-prompt .pin-number-input {
+  background: transparent;
+  border: .05em solid #fff;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: #fff;
+  font-size: 2.5em;
+  margin: .2em;
+  padding: .2em;
+  text-align: center;
+  transition: transform .1s ease-out;
+  width: 80%;
+}
+.edit-profile {
+  background: transparent;
+  border: .05em solid #fff;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: #fff;
+  font-size: 1.2em;
+  height: 2.5em;
+  margin: .2em;
+  padding: .2em;
+  text-align: center;
+  transition: transform .1s ease-out;
+}
+.pin-input-error {
+  color: #ea3841;
+  font-size: 2.1vw;
+  min-height: 30px;
+}
+.profile-pin-prompt {
+  align-items: center;
+  background: rgba(0, 0, 0, .8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: opacity .3s ease-out;
+}
+input[type="button"]:hover{
+  cursor:pointer;
+}
+input[type="button"]:active{
+  background-color:red;
+}
+@media (max-width: 900px)
+{
+   span 
+  {
+    width: calc(10vw - 2px);
+    height: calc(10vw - 2px);
+  }
+  .profilelogin
+  {
+    position: absolute;
+    width: 70%;
+    height: max-content;
+    background: #222;  
+    z-index: 1000;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    padding: 10%;
+  
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,9);
+  }
+  .edit-profile {
+    background: transparent;
+    border: .05em solid #fff;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 0.3em;
+    margin: .2em;
+    padding: .2em;
+    text-align: center;
+    transition: transform .1s ease-out;
+  }.profile-pin-dismiss {
+    position: absolute;
+    right: 30px;
+    top: 100px;
+}.profile-pin-dismiss a {
+  display: block;
+}a {
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+}.t_17d527 .svg-icon {
+  border: 1px solid transparent;
+  margin: 0 -1px;
+  overflow: visible;
+  transform: scale(1);
+}
+
+.profile-pin-dismiss svg {
+  color: #ccc;
+  height: 2vw;
+  width: 2vw;
+}
+  .profile-pin-prompt .pin-number-input {
+    background: transparent;
+    border: .05em solid #fff;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 0.3em;
+    margin: .2em;
+    padding: .2em;
+    text-align: center;
+    transition: transform .1s ease-out;
+    width: 30%;
+  }
+}
+@media (max-width: 600px)
+{
+
+  .profile-pin-prompt .pin-number-input {
+    background: transparent;
+    border: .05em solid #fff;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 1.5em;
+    height: 1.5em;
+    margin: .2em;
+    padding: .2em;
+    text-align: center;
+    transition: transform .1s ease-out;
+    width: 80%;
+  }
+  .pin-input-error {
+    color: #ea3841;
+    font-size: 3.5vw;
+    min-height: 30px;
+  }
+  .profilelogin
+{
+  position: absolute;
+  width: 80%;
+  height: max-content;
+  background: #222;  
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6%;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,9);
+}
+.profilelogin .profilerow {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-around;
+ 
+}
+.profilelogin .svg-icon-profile-lock {
+  color: #666;
+  margin-bottom: 3px;
+  height: 15px;
+  width: 15px;
+}
+.profilelogin .profilerow .profilecontainer{
+  display: flex;
+  flex-wrap: wrap;
+  width: 40%;
+  height: 40%;
+  align-items: center;
+  justify-content: center;
+}
+.profilelogin .profilerow .profilecontainer a{
+  flex-direction:column;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 40%;
+  align-items: center;
+  justify-content: center;
+}
+.profilelogin .profilerow .profilecontainer a  h2{
+ font-size: 12px;
+}
+.profilelogin h1{
+  font-size: 30px !important;
+}
+
+
+   span 
+  {
+    width: calc(20vw - 2px);
+    height: calc(20vw - 2px);
+  }
+}

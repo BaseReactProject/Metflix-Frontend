@@ -5,6 +5,8 @@ import { UpdateUserPasswordDto, UserForLoginDto, UserForRegisterDto } from "../m
 import { VerifyEmailAuthenticatorModel } from "../models/EmailModels";
 import toastr from 'toastr'
 import tokenService from "./token-service";
+import { GetListAccountListItemDto, GetListProfileListItemDto } from "../../models/responses/responses";
+import { GetListModel } from "../models/ResponseModels";
 
 class AuthService {
 	Register(model: UserForRegisterDto) {
@@ -13,7 +15,7 @@ class AuthService {
 	async Login(model: UserForLoginDto,locationlink:string) {
 		return await axios.post(BASE_API_URL + "Auth/Login", model).then((r) => {
 			toastr.success("Giriş işlemi Başarılı Tebrikler ... ");
-			document.cookie = `token=${r.data.accessToken.token};`;
+			tokenService.setToken(r.data.accessToken.token);
 			setTimeout(() => {
 				window.location.href = "/" + locationlink; 
 			}, 500);
@@ -43,6 +45,26 @@ class AuthService {
 	}
 	LogOut(locationlink:string){
 		tokenService.deleteToken();
+		tokenService.deleteMainToken();
+		toastr.success("Başarılı Bir Şekilde Çıkış Yapılıyor");
+		setTimeout(() => {
+			window.location.href = "/" + locationlink; 
+		}, 300);
+	}
+	async GetProfiles(){
+		return await axiosInstance.get("Auth/GetProfiles").then((r:any)=>{return r.data.items[0].accountProfiles}).catch(r=>console.log(r));
+	}
+	async ProfileLogin(profileId:number,password:string){
+		return await axiosInstance.post("Auth/ProfileLogin",{profileId:profileId,password:password}).then((r)=>{
+			tokenService.setMainToken(r.data.accessToken.token);
+			toastr.success("Giriş işlemi Başarılı Tebrikler ... ");
+			setTimeout(() => {
+				window.location.href = "/" + "mainpage"; 
+			}, 500);
+		}).catch((r)=>{alert("Bir Sorun Oluştu")});
+	}
+	ProfileLogOut(locationlink:string){
+		tokenService.deleteMainToken();
 		toastr.success("Başarılı Bir Şekilde Çıkış Yapılıyor");
 		setTimeout(() => {
 			window.location.href = "/" + locationlink; 

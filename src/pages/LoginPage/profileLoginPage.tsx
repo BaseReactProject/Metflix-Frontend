@@ -1,20 +1,19 @@
-import React from 'react'
 import "./loginPage.css"
-import SignIn from '../../components/auth/signin/signin'
+import ProfileLogin from '../../components/auth/profilelogin/profilelogin'
 type Props = {}
 
-const LoginPage = (props: Props) => {
+const ProfileLoginPage = (props: Props) => {
     const spans = Array.from({ length: 520 }, (_, index) => index + 1);
   return (
     <>
-    <section className='authSection'> 
+    <section> 
     {spans.map((number) => (
         <span key={number}></span>
       ))}
-   <SignIn></SignIn>
+   <ProfileLogin></ProfileLogin>
 
   </section></>
   )
 }
 
-export default LoginPage
+export default ProfileLoginPage
